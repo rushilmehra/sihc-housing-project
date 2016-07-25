@@ -14,7 +14,7 @@ public class ApplicationDatabase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "HousingDatabase.db";
     private static final String TABLE_NAME = "applications";
     private static final String SQL_CREATE = "CREATE TABLE " + TABLE_NAME +
-            " (_id INTEGER PRIMARY KEY, IMAGETITLE TEXT , IMAGEURL TEXT , IMAGEDESC TEXT)";
+            " (_id INTEGER PRIMARY KEY, NAME TEXT , JOB TEXT , SALARY TEXT)";
 
     private static final String SQL_DROP = "DROP TABLE IS EXISTS " + TABLE_NAME ;
 
