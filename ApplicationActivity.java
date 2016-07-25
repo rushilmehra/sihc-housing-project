@@ -35,8 +35,8 @@ public class ApplicationActivity extends Activity {
         adapter = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.list_layout,
                 null,
-                new String[] { "IMAGETITLE", "IMAGEURL", "IMAGEDESC"},
-                new int[] { R.id.imgTitle , R.id.imgUrl, R.id.imgDesc}, 0);
+                new String[] { "NAME", "JOB", "SALARY"},
+                new int[] { R.id.Name , R.id.Job, R.id.Salary}, 0);
 
         listView.setAdapter(adapter);
         refreshValuesFromContentProvider();
@@ -58,9 +58,9 @@ public class ApplicationActivity extends Activity {
 
     public void onClickAddImage(View view) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("IMAGETITLE", ((EditText) findViewById(R.id.edtTxtImageTitle)).getText().toString());
-        contentValues.put("IMAGEURL" , ((EditText)findViewById(R.id.edtImageUrl)).getText().toString());
-        contentValues.put("IMAGEDESC", ((EditText) findViewById(R.id.edtImageDesc)).getText().toString());
+        contentValues.put("NAME", ((EditText) findViewById(R.id.edtName)).getText().toString());
+        contentValues.put("JOB" , ((EditText)findViewById(R.id.edtJob)).getText().toString());
+        contentValues.put("SALARY", ((EditText) findViewById(R.id.edtSalary)).getText().toString());
         Uri uri = getContentResolver().insert(CONTENT_URI, contentValues);
         Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
         refreshValuesFromContentProvider();
